@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';

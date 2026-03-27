@@ -21,7 +21,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={cn('h-full w-full antialiased font-sans', poppins.variable)}>
       <body className="h-full w-full flex flex-col">
-        {children}
+        <TooltipProvider>
+          {children}
+        </TooltipProvider>
       </body>
     </html>
   );
