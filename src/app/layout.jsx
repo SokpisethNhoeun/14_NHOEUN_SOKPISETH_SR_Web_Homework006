@@ -2,15 +2,14 @@ import { AppSidebar } from '@/components/app-sidebar';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from '@/lib/utils';
-import { Geist } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import NavHomePageComponents from './Component/NavHomePageComponents';
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const poppins = Poppins({
   subsets: ['latin'],
+  weight: ['100','200','300','400','500','600','700','800','900'], // optional but recommended
+  variable: '--font-sans',
 });
 
 export const metadata = {
@@ -20,17 +19,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={cn('h-full antialiased font-sans', geist.variable)}>
-      <body className="h-full flex flex-col">
-        <TooltipProvider>
-          <NavHomePageComponents />
-        <SidebarProvider>
-          <AppSidebar />
-          <main>
-            <SidebarTrigger />
-           {children}
-          </main>
-        </SidebarProvider></TooltipProvider>
+    <html lang="en" className={cn('h-full w-full antialiased font-sans', poppins.variable)}>
+      <body className="h-full w-full flex flex-col">
+        {children}
       </body>
     </html>
   );

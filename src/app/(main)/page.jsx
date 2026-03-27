@@ -1,8 +1,9 @@
-import CustomerHomepageCardComponent from './Component/CustomerHomepageCardComponent';
-import ProductHomepageCardComponent from './Component/ProductHomepageCardComponent';
+import CustomerHomepageCardComponent from '../Component/CustomerHomepageCardComponent';
+import ProductHomepageCardComponent from '../Component/ProductHomepageCardComponent';
 
 async function page() {
-  const user = await fetch('https://homework-api.noevchanmakara.site/api/v1/customers');
+ 
+  const user = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/customers`);
   const totalUser = await user.json();
 
   return (
